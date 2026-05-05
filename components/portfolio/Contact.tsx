@@ -59,6 +59,7 @@ export default function Contact() {
           <div className="font-mono text-sm text-text-primary group-hover:text-purple-400 break-all transition-colors">
             yangzsu.notion.site
           </div>
+          <div className="text-text-secondary text-xs mt-1">상세 프로젝트 기록 · 트러블슈팅 노트</div>
         </a>
       </div>
 
