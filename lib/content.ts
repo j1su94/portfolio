@@ -146,14 +146,14 @@ export const projects: Project[] = [
   {
     title: '앱인토스 미니앱 사이드 프로젝트',
     period: '2026.04 ~ 진행중',
-    description: '토스 슈퍼앱 내 앱인토스 플랫폼에서 동작하는 미니앱 3종 (엔빵, 오늘의 5초, 재고뚝딱)',
+    description: '토스 앱 안에서 바로 쓰는 미니앱 3개를 혼자 기획·개발·출시 (엔빵 · 오늘의 5초 · 재고뚝딱)',
     overview: [
-      '제품 기획부터 배포까지 전 과정 단독 진행, 앱인토스 비게임 검수 요건 대응 및 출시 완료',
+      '아이디어부터 출시까지 모든 단계를 혼자 진행, 토스 검수 요건 통과 후 정식 출시',
     ],
     highlights: [
-      '그리디 알고리즘 기반 N빵 최소 송금 정산 로직, Vitest 단위 테스트 작성',
-      'Zustand persist + IndexedDB 이원화로 클라이언트 데이터 영속화',
-      'ffmpeg.wasm 미동작 이슈를 onTimeUpdate 재생 구간 제한 방식으로 우회',
+      '엔빵 — 친구끼리 N차 모임 정산할 때 송금 횟수를 가장 적게 만드는 계산 로직 직접 구현',
+      '서버 없이도 데이터가 날아가지 않게 브라우저에 안전하게 저장하는 구조 설계',
+      '오늘의 5초 — 토스 앱 환경에서 영상 편집이 동작하지 않는 문제를 다른 방식으로 해결',
     ],
     stack: ['React', 'TypeScript', '@apps-in-toss/web-framework', 'Zustand', 'Vitest'],
     isSideProject: true,
