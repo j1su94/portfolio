@@ -88,6 +88,7 @@ export type Project = {
   highlights: string[]
   stack: string[]
   isSideProject?: boolean
+  images?: { src: string; alt: string }[]
 }
 
 export const projects: Project[] = [
@@ -105,6 +106,10 @@ export const projects: Project[] = [
       '내부망 Docker Registry 구축으로 CI/CD 환경 문제 해결',
     ],
     stack: ['Next.js', 'Spring Boot', 'MySQL', 'Docker', 'GitLab CI/CD'],
+    images: [
+      { src: '/projects/themessage-dashboard.png', alt: '더메시지 — 전송 현황 대시보드' },
+      { src: '/projects/themessage-compose.png', alt: '더메시지 — 메시지 작성 화면' },
+    ],
   },
   {
     title: '메시지 발송 API',
@@ -120,6 +125,9 @@ export const projects: Project[] = [
       'SMS/LMS/MMS/RCS/알림톡 유형별 다건·동보 발송 로직 개발',
     ],
     stack: ['Spring Boot', 'Spring Integration', 'Redis', 'JWT', 'TCP Socket'],
+    images: [
+      { src: '/projects/sendapi-architecture.png', alt: '메시지 발송 API 아키텍처' },
+    ],
   },
   {
     title: '문자 서비스 WEB 개발',
