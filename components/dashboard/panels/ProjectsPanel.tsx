@@ -17,69 +17,67 @@ export default function ProjectsPanel() {
     <div className="p-8">
       <div className="font-mono text-text-secondary text-xs tracking-widest mb-1">user.projects</div>
       <h2 className="text-2xl font-bold mb-6">Projects</h2>
-      <div className="space-y-4">
+      <div className="space-y-3">
         {projects.map((project, i) => (
           <div
             key={i}
-            className="bg-bg-primary border border-border rounded-lg overflow-hidden hover:border-accent-blue transition-colors"
+            className="bg-bg-primary border border-border rounded-lg p-4 hover:border-accent-blue transition-colors"
           >
-            {project.images && project.images.length > 0 && (
-              <div
-                className={`grid gap-px bg-border ${
-                  project.images.length === 1
-                    ? 'grid-cols-1'
-                    : project.images.length === 2
-                      ? 'grid-cols-2'
-                      : 'grid-cols-3'
-                }`}
-              >
-                {project.images.map((img, k) => (
-                  <button
-                    key={k}
-                    onClick={() => setModal({ images: project.images!, index: k })}
-                    className={`relative bg-bg-primary overflow-hidden group cursor-zoom-in ${
-                      project.images!.length >= 3 ? 'aspect-[3/4]' : 'aspect-video'
-                    }`}
-                  >
-                    <Image
-                      src={img.src}
-                      alt={img.alt}
-                      fill
-                      sizes="(max-width: 768px) 100vw, 800px"
-                      className="object-contain p-2 group-hover:scale-[1.03] transition-transform"
-                    />
-                  </button>
-                ))}
-              </div>
-            )}
-            <div className="p-5">
-              <div className="flex items-start justify-between gap-2 mb-1">
-                <h3 className="font-bold text-sm">{project.title}</h3>
-                {project.isSideProject && (
-                  <span className="text-xs border border-purple-400 text-purple-400 px-2 py-0.5 rounded font-mono flex-shrink-0">
-                    Side
-                  </span>
-                )}
-              </div>
-              <div className="font-mono text-xs text-text-secondary mb-3">{project.period}</div>
-              <p className="text-text-secondary text-xs mb-3">{project.description}</p>
-              <ul className="space-y-1 mb-4">
-                {project.highlights.map((h, j) => (
-                  <li key={j} className="text-text-secondary text-xs flex gap-2">
-                    <span className="text-accent-blue flex-shrink-0">▸</span>
-                    <span>{h}</span>
-                  </li>
-                ))}
-              </ul>
-              <div className="flex flex-wrap gap-1.5">
-                {project.stack.map(s => (
-                  <span
-                    key={s}
-                    className="bg-bg-secondary border border-border text-text-secondary text-xs px-2 py-0.5 rounded font-mono"
-                  >
-                    {s}
-                  </span>
-                ))}
+            <div className="flex gap-4">
+              {/* 썸네일 (있을 때만) */}
+              {project.images && project.images.length > 0 && (
+                <button
+                  onClick={() => setModal({ images: project.images!, index: 0 })}
+                  className="relative flex-shrink-0 w-20 h-20 sm:w-24 sm:h-24 rounded overflow-hidden bg-bg-secondary border border-border group cursor-zoom-in"
+                  aria-label={`${project.title} 스크린샷 ${project.images.length}장 보기`}
+                >
+                  <Image
+                    src={project.images[0].src}
+                    alt={project.images[0].alt}
+                    fill
+                    sizes="96px"
+                    className="object-cover object-top group-hover:scale-[1.05] transition-transform"
+                  />
+                  {project.images.length > 1 && (
+                    <div className="absolute bottom-0 right-0 bg-bg-primary/90 text-text-primary text-[10px] font-mono px-1.5 py-0.5 rounded-tl">
+                      +{project.images.length - 1}
+                    </div>
+                  )}
+                </button>
+              )}
+
+              {/* 본문 */}
+              <div className="flex-1 min-w-0">
+                <div className="flex items-start justify-between gap-2 mb-1 flex-wrap">
+                  <h3 className="font-bold text-sm leading-snug">{project.title}</h3>
+                  {project.isSideProject && (
+                    <span className="text-xs border border-purple-400 text-purple-400 px-2 py-0.5 rounded font-mono flex-shrink-0">
+                      Side
+                    </span>
+                  )}
+                </div>
+                <div className="font-mono text-xs text-text-secondary mb-2">{project.period}</div>
+                <p className="text-text-secondary text-xs leading-relaxed mb-3">
+                  {project.description}
+                </p>
+                <div className="flex flex-wrap gap-1.5 mb-3">
+                  {project.stack.map(s => (
+                    <span
+                      key={s}
+                      className="bg-bg-secondary border border-border text-text-secondary text-[10px] px-2 py-0.5 rounded font-mono"
+                    >
+                      {s}
+                    </span>
+                  ))}
+                </div>
+                <ul className="space-y-1">
+                  {project.highlights.map((h, j) => (
+                    <li key={j} className="text-text-secondary text-xs flex gap-2">
+                      <span className="text-accent-blue flex-shrink-0">▸</span>
+                      <span>{h}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           </div>
