@@ -24,12 +24,22 @@ export default function Projects() {
             className="bg-bg-secondary border border-border rounded-lg overflow-hidden hover:border-accent-blue transition-colors flex flex-col"
           >
             {project.images && project.images.length > 0 && (
-              <div className={`grid ${project.images.length > 1 ? 'grid-cols-2' : 'grid-cols-1'} gap-px bg-border`}>
+              <div
+                className={`grid gap-px bg-border ${
+                  project.images.length === 1
+                    ? 'grid-cols-1'
+                    : project.images.length === 2
+                      ? 'grid-cols-2'
+                      : 'grid-cols-3'
+                }`}
+              >
                 {project.images.map((img, k) => (
                   <button
                     key={k}
                     onClick={() => setModal({ images: project.images!, index: k })}
-                    className="relative aspect-video bg-bg-primary overflow-hidden group cursor-zoom-in"
+                    className={`relative bg-bg-primary overflow-hidden group cursor-zoom-in ${
+                      project.images!.length >= 3 ? 'aspect-[3/4]' : 'aspect-video'
+                    }`}
                   >
                     <Image
                       src={img.src}

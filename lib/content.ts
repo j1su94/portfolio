@@ -158,10 +158,12 @@ export const projects: Project[] = [
     stack: ['React', 'TypeScript', '@apps-in-toss/web-framework', 'Zustand', 'Vitest'],
     isSideProject: true,
     images: [
+      { src: '/projects/today5sec-1.png', alt: '오늘의 5초 — 매일 한 컷, 5초의 기록' },
+      { src: '/projects/today5sec-2.png', alt: '오늘의 5초 — 모은 컷을 골라 나만의 무비로' },
+      { src: '/projects/nbbang-1.png', alt: '엔빵 — 복잡한 N빵, 한 번에 끝' },
+      { src: '/projects/nbbang-2.png', alt: '엔빵 — 1차, 2차, N차까지 전부 기록' },
       { src: '/projects/quickstock-1.png', alt: '재고뚝딱 — 모든 재고를 한눈에' },
       { src: '/projects/quickstock-2.png', alt: '재고뚝딱 — 간편하게 품목 추가' },
-      { src: '/projects/today5sec-logo.png', alt: '오늘의 5초 — 앱 로고' },
-      { src: '/projects/nbbang-logo.png', alt: '엔빵 — 앱 로고' },
     ],
   },
 ]
