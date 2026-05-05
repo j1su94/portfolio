@@ -8,24 +8,30 @@ const CATEGORIES = [
     label: 'Backend',
     color: 'text-accent-green',
     border: 'border-accent-green/40',
+    chipBg: 'bg-accent-green/10',
+    chipBorder: 'border-accent-green/40',
+    chipText: 'text-accent-green',
     description: '주력 영역 — Java/Spring 생태계 기반 시스템 설계 · 운영',
-    years: '6년+',
   },
   {
     key: 'devops' as const,
     label: 'DevOps',
     color: 'text-accent-blue',
     border: 'border-accent-blue/40',
+    chipBg: 'bg-accent-blue/10',
+    chipBorder: 'border-accent-blue/40',
+    chipText: 'text-accent-blue',
     description: 'CI/CD · 컨테이너 · 운영 자동화 환경 구축',
-    years: '3년+',
   },
   {
     key: 'frontend' as const,
     label: 'Frontend',
     color: 'text-purple-400',
     border: 'border-purple-400/40',
+    chipBg: 'bg-purple-400/10',
+    chipBorder: 'border-purple-400/40',
+    chipText: 'text-purple-400',
     description: 'Next.js · React · TypeScript 풀스택 개발 보조',
-    years: '4년+',
   },
 ]
 
@@ -53,31 +59,19 @@ export default function Skills() {
       </div>
 
       <div className="grid md:grid-cols-3 gap-4">
-        {CATEGORIES.map(({ key, label, color, border, description, years }) => (
+        {CATEGORIES.map(({ key, label, color, border, chipBg, chipBorder, chipText, description }) => (
           <div key={key} className={`bg-bg-secondary border ${border} rounded-lg p-5`}>
-            <div className="flex items-center justify-between mb-1 flex-wrap gap-2">
-              <h3 className={`font-mono text-base font-bold ${color}`}>{label}</h3>
-              <span className="font-mono text-xs text-text-secondary border border-border px-2 py-0.5 rounded">
-                {years}
-              </span>
-            </div>
+            <h3 className={`font-mono text-base font-bold ${color} mb-1`}>{label}</h3>
             <p className="text-text-secondary text-xs mb-4 leading-relaxed">{description}</p>
             <div className="flex flex-wrap gap-1.5">
-              {skills[key].map(skill => {
-                const isPrimary = (PRIMARY_STACK as readonly string[]).includes(skill)
-                return (
-                  <span
-                    key={skill}
-                    className={`text-xs px-2 py-1 rounded font-mono border ${
-                      isPrimary
-                        ? 'bg-bg-primary border-accent-blue/40 text-text-primary'
-                        : 'bg-bg-primary border-border text-text-secondary'
-                    }`}
-                  >
-                    {skill}
-                  </span>
-                )
-              })}
+              {skills[key].map(skill => (
+                <span
+                  key={skill}
+                  className={`text-xs px-2.5 py-1 rounded font-mono border ${chipBg} ${chipBorder} ${chipText} font-medium`}
+                >
+                  {skill}
+                </span>
+              ))}
             </div>
           </div>
         ))}
