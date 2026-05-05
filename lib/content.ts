@@ -157,5 +157,11 @@ export const projects: Project[] = [
     ],
     stack: ['React', 'TypeScript', '@apps-in-toss/web-framework', 'Zustand', 'Vitest'],
     isSideProject: true,
+    images: [
+      { src: '/projects/quickstock-1.png', alt: '재고뚝딱 — 모든 재고를 한눈에' },
+      { src: '/projects/quickstock-2.png', alt: '재고뚝딱 — 간편하게 품목 추가' },
+      { src: '/projects/today5sec-logo.png', alt: '오늘의 5초 — 앱 로고' },
+      { src: '/projects/nbbang-logo.png', alt: '엔빵 — 앱 로고' },
+    ],
   },
 ]

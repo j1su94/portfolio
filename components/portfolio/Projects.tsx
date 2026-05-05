@@ -1,7 +1,18 @@
+'use client'
+
+import { useState } from 'react'
 import Image from 'next/image'
 import { projects } from '@/lib/content'
+import ImageModal from './ImageModal'
+
+type ModalState = {
+  images: { src: string; alt: string }[]
+  index: number
+} | null
 
 export default function Projects() {
+  const [modal, setModal] = useState<ModalState>(null)
+
   return (
     <section id="projects" className="max-w-5xl mx-auto px-6 py-16 border-t border-border">
       <div className="font-mono text-text-secondary text-xs tracking-widest mb-2">$ git log --oneline</div>
@@ -15,21 +26,19 @@ export default function Projects() {
             {project.images && project.images.length > 0 && (
               <div className={`grid ${project.images.length > 1 ? 'grid-cols-2' : 'grid-cols-1'} gap-px bg-border`}>
                 {project.images.map((img, k) => (
-                  <a
+                  <button
                     key={k}
-                    href={img.src}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="relative aspect-video bg-bg-primary overflow-hidden group"
+                    onClick={() => setModal({ images: project.images!, index: k })}
+                    className="relative aspect-video bg-bg-primary overflow-hidden group cursor-zoom-in"
                   >
                     <Image
                       src={img.src}
                       alt={img.alt}
                       fill
                       sizes="(max-width: 768px) 100vw, 50vw"
-                      className="object-cover object-top group-hover:scale-[1.02] transition-transform"
+                      className="object-contain p-2 group-hover:scale-[1.03] transition-transform"
                     />
-                  </a>
+                  </button>
                 ))}
               </div>
             )}
@@ -66,6 +75,15 @@ export default function Projects() {
           </div>
         ))}
       </div>
+
+      {modal && (
+        <ImageModal
+          images={modal.images}
+          startIndex={modal.index}
+          onClose={() => setModal(null)}
+          onIndexChange={(index) => setModal({ ...modal, index })}
+        />
+      )}
     </section>
   )
 }
