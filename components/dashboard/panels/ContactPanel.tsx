@@ -8,7 +8,7 @@ const AVAILABLE_FOR = [
 ]
 
 const PREFERRED_TOPICS = [
-  '메시징 시스템 · 대용량 트래픽 처리',
+  '대용량 트래픽 처리 · 시스템 성능 최적화',
   'Spring 생태계 기반 백엔드 설계',
   '레거시 시스템 현대화 · 풀스택 전환',
   '핀테크 · B2B 도메인',
