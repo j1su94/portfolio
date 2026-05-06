@@ -59,3 +59,37 @@ body {
 .cursor-blink {
   animation: blink 1s steps(1) infinite;
 }
+
+@media print {
+  html, body {
+    background-color: #0d1117 !important;
+    color: #f0f6fc !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  header,
+  .no-print {
+    display: none !important;
+  }
+
+  main, main > div {
+    padding-top: 0 !important;
+  }
+
+  section {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    border-top-color: #30363d !important;
+  }
+
+  a {
+    color: #58a6ff !important;
+    text-decoration: none !important;
+  }
+
+  @page {
+    margin: 12mm 8mm;
+    size: A4;
+  }
+}

@@ -97,8 +97,8 @@ export const projects: Project[] = [
     period: '2025.06 ~ 2025.12',
     description: 'SMS/LMS/MMS·카카오 알림톡/브랜드메시지를 통합 지원하는 B2B/B2C UMS 플랫폼',
     overview: [
-      'PHP 기반 레거시 서비스를 Next.js + Spring Boot 구조로 단독 전환',
-      '기획 문서 없이 요구사항 직접 정의, DB 설계부터 배포까지 전 과정 담당',
+      'PHP 기반 레거시 서비스를 Next.js + Spring Boot 풀스택으로 전환',
+      '요구사항 정의부터 DB 설계, 배포까지 전 과정 담당',
     ],
     highlights: [
       'OpenAPI Generator 도입으로 FE/BE 타입 싱크 자동화',
@@ -146,9 +146,9 @@ export const projects: Project[] = [
   {
     title: '앱인토스 미니앱 사이드 프로젝트',
     period: '2026.04 ~ 진행중',
-    description: '토스 앱 안에서 바로 쓰는 미니앱 3개를 혼자 기획·개발·출시 (엔빵 · 오늘의 5초 · 재고뚝딱)',
+    description: '토스 앱 안에서 바로 쓰는 미니앱 3개를 풀스택으로 기획·개발·출시 (엔빵 · 오늘의 5초 · 재고뚝딱)',
     overview: [
-      '아이디어부터 출시까지 모든 단계를 혼자 진행, 토스 검수 요건 통과 후 정식 출시',
+      '아이디어부터 출시까지 모든 단계를 풀스택으로 진행, 토스 검수 요건 통과 후 정식 출시',
     ],
     highlights: [
       '엔빵 — 친구끼리 N차 모임 정산할 때 송금 횟수를 가장 적게 만드는 계산 로직 직접 구현',

@@ -3,13 +3,13 @@ import { profile, projects, experiences } from '@/lib/content'
 const STATS = [
   { label: 'experience', value: '7년+', detail: 'Java / Spring Boot' },
   { label: 'companies', value: `${experiences.length}곳`, detail: '핀테크 · 헬스케어' },
-  { label: 'projects', value: `${projects.length}개`, detail: '대용량 메시징 도메인' },
+  { label: 'projects', value: `${projects.length}개`, detail: '백엔드 · 풀스택' },
 ]
 
 const HIGHLIGHTS = [
   'Spring Integration + TCP 소켓 기반 발송 처리량 2.5배 향상 (400 → 1,000건/초)',
-  '레거시 PHP → Next.js + Spring Boot 단독 전환, GitLab CI/CD 자동화 구축',
-  '메시징·결제·헬스케어 도메인 풀스택 1인 개발 다수 경험',
+  '레거시 PHP → Next.js + Spring Boot 풀스택 전환, GitLab CI/CD 자동화 구축',
+  '메시징·결제·헬스케어 도메인 풀스택 개발 경험',
   '앱인토스 미니앱 3종 기획·개발·출시 (사이드 프로젝트)',
 ]
 
