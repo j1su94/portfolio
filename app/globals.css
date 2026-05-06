@@ -73,23 +73,88 @@ body {
     display: none !important;
   }
 
-  main, main > div {
-    padding-top: 0 !important;
-  }
-
-  section {
-    break-inside: avoid;
-    page-break-inside: avoid;
-    border-top-color: #30363d !important;
-  }
-
   a {
     color: #58a6ff !important;
     text-decoration: none !important;
   }
 
+  .pdf-cover {
+    height: 100vh;
+    page-break-after: always;
+    break-after: page;
+  }
+
+  .pdf-section {
+    page-break-before: always;
+    break-before: page;
+  }
+
+  .pdf-section section {
+    border-top: none !important;
+  }
+
+  /* Force single-column layout for the OUTER projects grid (not nested image grids) */
+  .pdf-section #projects > .grid,
+  .pdf-section section#projects > .grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Restore explicit columns for inner image grids (gap-px is unique to them) */
+  .pdf-section #projects .grid.gap-px {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+  .pdf-section #projects .grid.gap-px.grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+  .pdf-section #projects .grid.gap-px.grid-cols-1 {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Keep individual cards intact (project cards, experience cards, etc.) */
+  .pdf-section .grid > div,
+  .pdf-section .space-y-3 > div,
+  .pdf-section .space-y-4 > div,
+  .pdf-section .space-y-5 > div,
+  .pdf-section .space-y-6 > div,
+  .pdf-section .space-y-8 > div,
+  .pdf-section ul {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .pdf-dashboard-page {
+    page-break-before: always;
+    break-before: page;
+    page-break-after: always;
+    break-after: page;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    zoom: 0.78;
+  }
+
+  .pdf-dashboard-page:first-of-type {
+    page-break-before: auto;
+  }
+
+  .pdf-dashboard-page:last-of-type {
+    page-break-after: auto;
+  }
+
+  .pdf-dashboard-page .flex.h-screen {
+    height: auto !important;
+    min-height: auto;
+  }
+
+  .pdf-dashboard-page main {
+    overflow: visible !important;
+  }
+
+  .pdf-dashboard-page .p-8 {
+    padding: 1.25rem !important;
+  }
+
   @page {
-    margin: 12mm 8mm;
+    margin: 0;
     size: A4;
   }
 }

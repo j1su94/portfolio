@@ -14,7 +14,7 @@ const HIGHLIGHTS = [
 ]
 
 const FOCUS = [
-  { label: 'Tech Focus', value: '메시징 시스템 · 발송 인프라' },
+  { label: 'Tech Focus', value: '백엔드 시스템 · API 설계' },
   { label: 'Strength', value: '대용량 트래픽 · 시스템 설계 · 운영' },
   { label: 'Currently', value: '더즌 메시징개발팀 (2024.03~)' },
 ]

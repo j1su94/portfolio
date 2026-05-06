@@ -5,11 +5,15 @@ import Experience from './Experience'
 import Projects from './Projects'
 import Contact from './Contact'
 
-export default function ScrollView() {
+type Props = {
+  hideNav?: boolean
+}
+
+export default function ScrollView({ hideNav = false }: Props) {
   return (
     <main className="animate-fadeIn">
-      <Navbar />
-      <div className="pt-14">
+      {!hideNav && <Navbar />}
+      <div className={hideNav ? '' : 'pt-14'}>
         <About />
         <Skills />
         <Experience />

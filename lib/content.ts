@@ -47,7 +47,7 @@ export const experiences: Experience[] = [
     description: '펌뱅킹·결제·카카오페이 제휴·통합 메시징 등 다양한 B2B 서비스를 제공하는 핀테크 기업',
     highlights: [
       'Spring Integration + TCP 소켓 기반 대용량 발송 아키텍처 설계 (처리량 2.5배 향상)',
-      'PHP 레거시 서비스를 Next.js + Spring Boot 구조로 단독 전환',
+      'PHP 레거시 서비스를 Next.js + Spring Boot 풀스택으로 전환',
       'OpenAPI Generator 기반 FE/BE 연동 자동화',
       'GitLab CI/CD · Docker 기반 배포 자동화 구축',
     ],
@@ -142,6 +142,36 @@ export const projects: Project[] = [
       'JWT + Spring Security + Google OTP 2차 인증으로 관리자 보안 강화',
     ],
     stack: ['Spring Boot', 'Thymeleaf', 'QueryDSL', 'MySQL', 'Apache POI'],
+  },
+  {
+    title: '쥬비스 그룹 IT 개발 및 운영',
+    period: '2020.05 ~ 2023.08',
+    description: '다이어트 전문 기업 쥬비스 그룹의 쇼핑몰, CRM, 공통 HUB API 서버 등 사내 IT 시스템 개발 및 운영',
+    overview: [
+      'Java/Spring + JSP/AngularJS + MySQL · AWS EC2 기반 서버 환경에서 운영',
+      '여러 내부 서비스에서 공통으로 사용하는 HUB API 서버 개발로 서비스 간 연동 효율화',
+    ],
+    highlights: [
+      '슬로우 쿼리 개선을 통한 MySQL 조회 성능 최적화',
+      '공통 TypeHandler 개발로 JSON 파싱 코드 중복 제거 및 유지보수성 향상',
+      'Custom Annotation 기반 파라미터 검증 도입으로 런타임 에러 감소 및 API 신뢰성 향상',
+      '쇼핑몰·CRM 기능 개발 및 HUB API 서버 구축으로 내부 서비스 간 연동 일원화',
+    ],
+    stack: ['Java', 'Spring', 'JSP', 'AngularJS', 'MySQL', 'AWS EC2'],
+  },
+  {
+    title: '호텔신라 SHP 개발 및 운영',
+    period: '2019.12 ~ 2020.04',
+    description: '호텔신라 SHP 서비스의 앱 영문화 작업 및 ERP 시스템 운영·유지보수',
+    overview: [
+      'Java/Spring + JSP + Oracle 스택, 하이브리드 웹 환경에서 서버 사이드 로직 및 UI 개발',
+      'SVN 기반 형상관리 환경에서 개발',
+    ],
+    highlights: [
+      'properties 파일 기반 다국어(한/영) 처리 구현으로 앱 영문화 대응 및 언어 동적 전환 지원',
+      'ERP 페이지 기능 개선 및 Oracle SQL 튜닝을 통한 쿼리 성능 최적화',
+    ],
+    stack: ['Java', 'Spring', 'JSP', 'Oracle'],
   },
   {
     title: '앱인토스 미니앱 사이드 프로젝트',
